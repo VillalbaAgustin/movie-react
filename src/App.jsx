@@ -1,11 +1,4 @@
-import {
-  createBrowserRouter,
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  RouterProvider,
-  Link,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 import styles from './App.module.css';
 import { MoviesGrid } from './Components/MoviesGrid';
@@ -16,15 +9,14 @@ export const App = () => {
   return (
     <Router>
       <header>
-        {/* <h1 className={styles.title}>Movies</h1> */}
-        <Link to= "/">Home</Link>
-        <br />
-        <Link to= "/movie">Movie</Link>
+        <Link to="/">
+          <h1 className={styles.title}>Movies</h1>
+        </Link>
       </header>
       <main>
         <Routes>
-          <Route path="/movie" element={<MovieDetails/>}/>
-          <Route path="/"  element={<LandingPage/>}/>
+          <Route path="/movies/:movieId" element={<MovieDetails />} />
+          <Route path="/" element={<LandingPage />} />
         </Routes>
         {/* <MoviesGrid /> */}
       </main>

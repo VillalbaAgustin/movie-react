@@ -1,5 +1,7 @@
+import { MoviesGrid } from "../Components/MoviesGrid"
+
 export const LandingPage = () => {
   return (
-    <div>LandingPage</div>
+    <MoviesGrid/>
   )
 }
