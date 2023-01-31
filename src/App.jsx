@@ -18,7 +18,6 @@ export const App = () => {
           <Route path="/movies/:movieId" element={<MovieDetails />} />
           <Route path="/" element={<LandingPage />} />
         </Routes>
-        {/* <MoviesGrid /> */}
       </main>
     </Router>
   );

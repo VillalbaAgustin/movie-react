@@ -1,7 +1,11 @@
 import { MoviesGrid } from "../Components/MoviesGrid"
+import { Search } from "../Components/Search"
 
 export const LandingPage = () => {
   return (
-    <MoviesGrid/>
+    <div>
+      <Search/>
+      <MoviesGrid/>
+    </div>
   )
 }
