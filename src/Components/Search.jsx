@@ -5,28 +5,29 @@ import {
   searchButton,
 } from './Search.module.css';
 import { FaSearch } from 'react-icons/fa';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useQuery } from '../hooks/useQuery';
 
 export const Search = () => {
-  const [searchText, setSearchText] = useState('');
   const navigate = useNavigate();
 
   const query = useQuery();
   const search = query.get('search');
 
-  useEffect(() => {
-    setSearchText(search || '');
-  }, [search]);
+  // useEffect(() => {
+  //   setSearchText(search || '');
+  // }, [search]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate('/?search=' + searchText);
+    // navigate('/?search=' + searchText);
   };
 
   const handleChange = (e) => {
-    setSearchText(e.target.value);
+    const value = e.target.value;
+    navigate('/?search=' + value);
+    
   };
 
   return (
@@ -35,7 +36,7 @@ export const Search = () => {
         <input
           className={searchInput}
           type="text"
-          value={searchText}
+          value={search}
           onChange={handleChange}
         />
         <button className={searchButton} type="submit">
