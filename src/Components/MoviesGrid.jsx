@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { get } from '../helpers/httpClient';
+import { Empty } from './Empty';
 import { Loading } from './Loading';
 import { MovieCard } from './MovieCard';
 import styles from './MoviesGrid.module.css';
@@ -27,9 +28,9 @@ export const MoviesGrid = ({ search }) => {
     });
   }, [search, page]);
 
-  // if (isLoading) {
-  //   return <Loading />;
-  // }
+  if ( !isLoading && movies.length === 0) {
+    return <Empty/>
+  }
 
   return (
     <InfiniteScroll

@@ -5,7 +5,6 @@ import {
   searchButton,
 } from './Search.module.css';
 import { FaSearch } from 'react-icons/fa';
-import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useQuery } from '../hooks/useQuery';
 
@@ -36,7 +35,9 @@ export const Search = () => {
         <input
           className={searchInput}
           type="text"
-          value={search}
+          placeholder='Title...'
+          aria-label='Search Movies'
+          value={search ?? ""}
           onChange={handleChange}
         />
         <button className={searchButton} type="submit">

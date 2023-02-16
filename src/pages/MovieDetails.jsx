@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Loading } from '../Components/Loading';
+import { getMovieImg } from '../helpers/getMovieImg';
 import { get } from '../helpers/httpClient';
 import styles from './MovieDetails.module.css';
 
@@ -29,7 +30,7 @@ export const MovieDetails = () => {
     return null;
   }
 
-  const imgeUrl = 'https://image.tmdb.org/t/p/w500' + movie.poster_path;
+  const imgeUrl = getMovieImg( movie.poster_path, 500 );
 
   return (
     <div className={styles.detailsContainer}>
