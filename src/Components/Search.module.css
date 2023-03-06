@@ -13,6 +13,8 @@
   border-radius: 10px;
   font-size: large;
   padding: 5px 40px 5px 10px;
+  border: solid 1px white;
+  outline: none;
 }
 .searchButton{
   position: absolute;
@@ -22,8 +24,8 @@
   height: 100%;
   position: absolute;
   border-radius: 0px 10px 10px 0px;
-  /* background: none; */
-  /* border: none; */
+  background: none;
+  border: none;
 }
 
 @media only screen and (max-width: 700px) {

@@ -9,14 +9,14 @@ export const App = () => {
   return (
     <Router>
       <header>
-        <Link to="/*">
+        <Link to="/">
           <h1 className={styles.title}>Movies</h1>
         </Link>
       </header>
       <main>
         <Routes>
           <Route path="/movies/:movieId" element={<MovieDetails />} />
-          <Route path="/*" element={<LandingPage />} />
+          <Route path="/" element={<LandingPage />} />
         </Routes>
       </main>
     </Router>
