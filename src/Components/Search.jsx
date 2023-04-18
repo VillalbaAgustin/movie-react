@@ -14,19 +14,14 @@ export const Search = () => {
   const query = useQuery();
   const search = query.get('search');
 
-  // useEffect(() => {
-  //   setSearchText(search || '');
-  // }, [search]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // navigate('/?search=' + searchText);
   };
 
   const handleChange = (e) => {
     const value = e.target.value;
-    navigate('/?search=' + value);
-    
+    navigate('/movie-react/?search=' + value);
   };
 
   return (

@@ -16,11 +16,9 @@ export const MovieDetails = () => {
     get('/movie/' + movieId).then((data) => {
     setIsLoading(false);
       setMovie(data);
-      // console.log(data);
     });
   }, [movieId]);
   
-  // console.log(movie);
 
   if (isLoading) {
     return <Loading/>
